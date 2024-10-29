@@ -34,7 +34,7 @@ const PasteList = () => {
   return (
     <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
     <input
-      className="flex mt-5 min-w-[600px] h-12 items-center p-3 border-2 border-sky-500 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300 transition duration-300"
+      className="flex mt-5 w-full max-w-lg h-12 items-center p-3 border-2 border-sky-500 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300 transition duration-300"
       type="text"
       placeholder="Search..."
       value={searchItem}
@@ -46,7 +46,7 @@ const PasteList = () => {
           <div key={paste.id || paste._id} className="border border-blue-500 rounded-lg p-4 shadow-md bg-white text-black transition-transform duration-300 hover:scale-105">
             <div className="font-bold text-xl mb-2">{paste.title}</div>
             <div className="mb-4 text-gray-700">{paste.content}</div>
-            <div className="flex flex-row gap-4 justify-center">
+            <div className="flex flex-wrap gap-4 justify-center">
               <button className="flex items-center bg-sky-500 text-white rounded px-4 py-2 hover:bg-sky-600 transition duration-300">
                 <FaEdit className="mr-2" /> 
                 <a href={`/?pastesid=${paste?._id}`}> Edit</a>
@@ -90,6 +90,7 @@ const PasteList = () => {
       )}
     </div>
   </div>
+
   );
 };
 
